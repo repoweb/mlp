@@ -1,0 +1,17 @@
+<div class="pure-button-group language_switcher" role="group" aria-label="...">
+   {% for lang in site.languageNames %}
+        {% if lang[0] == site.language_default %}
+          {% if lang[0] == site.lang %}
+            <a rel="canonical" class="pure-button pure-button-active" href="{{ site.baseurl_root }}/">{{ lang[1] }}</a>
+          {% else %}
+            <a rel="canonical" class="pure-button" href="{{ site.baseurl_root }}/">{{ lang[1] }}</a>
+          {% endif %}
+        {% else %}
+          {% if lang[0] == site.lang %}
+            <a rel="canonical" class="pure-button pure-button-active" href="{{ site.baseurl_root }}/{{ lang[0] }}/">{{ lang[1] }}</a>
+          {% else %}
+            <a rel="canonical" class="pure-button" href="{{ site.baseurl_root }}/{{ lang[0] }}/">{{ lang[1] }}</a>
+          {% endif %}
+        {% endif %}
+   {% endfor %}
+</div>

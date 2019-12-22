@@ -1,0 +1,54 @@
+---
+layout: default
+---
+
+<article class="post">
+  <header class="post-header">
+    <h2 class="post-title">{{ page.title }}</h2>
+    {% if post %}
+      {% assign categories = post.categories %}
+    {% else %}
+      {% assign categories = page.categories %}
+    {% endif %}
+
+    {% if categories != empty %}
+      <div class="post-meta">
+        {% t global.filed_under %} &nbsp;
+        {% for category in categories %}
+          <div class="post-category post-category-pure">{{ category }}</div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </header>
+
+  <div class="content">
+    {{ content }}
+  </div>
+
+  <div class="post-meta date">
+      {% if site.language_default == site.lang %}
+        Written on {{ page.date | date: "%B %e, %Y" }}
+      {% else %}
+        Erstellt am
+        {% assign m = page.date | date: "%-m" %}
+        {{ page.date | date: "%-d" }}.
+        {% case m %}
+          {% when '1' %}Januar
+          {% when '2' %}Februar
+          {% when '3' %}M&auml;rz
+          {% when '4' %}April
+          {% when '5' %}Mai
+          {% when '6' %}Juni
+          {% when '7' %}Juli
+          {% when '8' %}August
+          {% when '9' %}September
+          {% when '10' %}Oktober
+          {% when '11' %}November
+          {% when '12' %}Dezember
+        {% endcase %}
+        {{ page.date | date: "%Y" }}
+      {% endif %}
+  </div>
+
+  {% include disqus.html %}
+</article>

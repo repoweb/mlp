@@ -1,0 +1,42 @@
+media_presets:
+  wide_desktop: 'min-width: 1801px'
+  desktop: 'max-width: 1800px'
+  wide_tablet: 'max-width: 1200px'
+  tablet: 'max-width: 900px'
+  mobile: 'max-width: 720px'
+
+markup_presets:
+  default:
+    markup: auto
+    formats: [original]
+    widths: [200, 400, 720, 1200]
+    media_widths:
+      mobile: [200, 400, 720]
+      tablet: [400, 720, 1200]
+    size: 720px
+    sizes:
+      mobile: 100vw
+      desktop: 60vw
+    fallback_width: 720
+    fallback_format: original
+    attributes:
+      picture: 'class="image'
+      img: 'class="image"'
+
+  small:
+    formats: [original]
+    widths: [100, 200]
+    size: 200px
+    attributes:
+      img: class="centered small-image"
+
+  medium:
+    formats: [original]
+    widths: [100, 200, 400]
+    size: 400px
+    attributes:
+      img: class="centered medium-image"
+
+  icon:
+    base-width: 20
+    pixel_ratios: [1, 1.5, 2]
