@@ -81,7 +81,7 @@ GEM
     mini_magick (4.9.5)
     mini_portile2 (2.4.0)
     minitest (5.13.0)
-    nokogiri (1.10.7)
+    nokogiri (1.10.8)
       mini_portile2 (~> 2.4.0)
     objective_elements (1.1.1)
     pathutil (0.16.2)
